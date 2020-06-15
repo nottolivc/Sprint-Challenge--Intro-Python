@@ -80,6 +80,9 @@ for c in cities:
 # Salt Lake City: (40.7774,-111.9301)
 
 # TODO Get latitude and longitude values from the user
+print("Please enter a latitude and longitude to see which cities are contained within those 2 points...")
+input_x = input("latitude1, lonngitude1: ").strip().split(",")
+input_y = input("latitude2, lonngitude2: ").strip().split(",")
 
 
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
@@ -89,5 +92,30 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
     # TODO Ensure that the lat and lon valuse are all floats
     # Go through each city and check to see if it falls within
     # the specified coordinates.
+    # float all values
+    lat1 = float(lat1)
+    lat2 = float(lat2)
+    lon1 = float(lon1)
+    lon2 = float(lon2)
+    # define corner points as two intersections 1 and 2 intial value of none
+    # inters1 = None
+    # insters2 = None
+    # if the longitudes are reversed
+    # if lon1 > lon2:
+    #     lon1 = lon2
+    #     lon2 = lon1
 
-    return within
+    # # normalize data for upper-left, lower-right
+    # if lat1 > lat2:
+    #     inters1, inters2 = (lat1, lon1), (lat2, lon2)
+    # # define a function for within the two points
+
+    # def pnts_within(pnt1, pnt2, position):
+    #     if (pnt1[0] > position[0] > pnt2[0]) and (pnt2[1] > position[1] > pnt1[1]):
+    #         return True
+    #     else:
+    #         return False
+    #     return within
+
+    # within = [city for city in cities if pnts_within(
+    #     inters1, inters2, (city.lat, city.lon))]

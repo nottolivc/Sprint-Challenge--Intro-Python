@@ -81,8 +81,8 @@ for c in cities:
 
 # TODO Get latitude and longitude values from the user
 print("Please enter a latitude and longitude to see which cities are contained within those 2 points...")
-input_x = input("latitude1, lonngitude1: ").strip().split(",")
-input_y = input("latitude2, lonngitude2: ").strip().split(",")
+input_x = input("latitude1, longitude1: ").strip().split(",")
+input_y = input("latitude2, longitude2: ").strip().split(",")
 
 
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):

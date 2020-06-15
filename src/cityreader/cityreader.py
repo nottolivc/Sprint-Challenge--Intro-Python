@@ -13,6 +13,12 @@ class City:
         self.lat = lat
         self.lon = lon
 
+    def __str__(self):
+        return f"{self.name}, {self.lat}, {self.lon}"
+
+    def __repr__(self):
+        return f"City: {self.name}, latitude: {self.lat}, longitude: {self.lon}"
+
 
 # In the body of the `cityreader` function, use Python's built-in "csv" module
 # to read this file so that each record is imported into a City instance. Then
@@ -30,7 +36,11 @@ def cityreader(cities=[]):
     # TODO Implement the functionality to read from the 'cities.csv' file
     # For each city record, create a new City instance and add it to the
     # `cities` list
-
+    with open("cities.csv") as citydata:
+        rows = csv.DictReader(citydata)
+        for city in rows:
+            cities.append(City(city["city"], float(
+                city["lat"]), float(city["lng"])))
     return cities
 
 
